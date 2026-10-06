@@ -5,7 +5,11 @@ export const Route = createFileRoute("/conditions-utilisation")({
   head: () => ({
     meta: [
       { title: "Conditions d’utilisation | Brayano IA" },
-      { name: "description", content: "Conditions d’utilisation des services Brayano IA et informations importantes sur leur intégration WhatsApp." },
+      {
+        name: "description",
+        content:
+          "Conditions d’utilisation des services Brayano IA et informations importantes sur leur intégration WhatsApp.",
+      },
     ],
   }),
   component: ConditionsPage,
@@ -113,50 +117,121 @@ function ConditionsPage() {
     <div className="min-h-screen bg-background text-foreground">
       <header className="border-b border-border bg-background/90">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-5 lg:px-8">
-          <a href="/" className="font-semibold tracking-wide">BRAYANO <span className="text-primary">IA</span></a>
-          <a href="/" className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"><ArrowLeft className="size-4" /> Retour à l’accueil</a>
+          <a href="/" className="font-semibold tracking-wide">
+            BRAYANO <span className="text-primary">IA</span>
+          </a>
+          <a
+            href="/"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <ArrowLeft className="size-4" /> Retour à l’accueil
+          </a>
         </div>
       </header>
 
       <main className="mx-auto max-w-5xl px-5 py-12 lg:px-8 lg:py-16">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full bg-primary/5 px-3 py-1.5 text-xs font-semibold text-primary"><FileText className="size-4" /> Informations contractuelles</div>
-          <h1 className="mt-5 text-4xl font-semibold leading-tight sm:text-5xl">Conditions d’utilisation</h1>
-          <p className="mt-5 text-lg leading-8 text-muted-foreground">Les règles applicables à l’utilisation de Brayano IA et les responsabilités de chaque partie.</p>
-          <p className="mt-4 text-sm text-muted-foreground">Dernière mise à jour : 5 octobre 2026</p>
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/5 px-3 py-1.5 text-xs font-semibold text-primary">
+            <FileText className="size-4" /> Informations contractuelles
+          </div>
+          <h1 className="mt-5 text-4xl font-semibold leading-tight sm:text-5xl">
+            Conditions d’utilisation
+          </h1>
+          <p className="mt-5 text-lg leading-8 text-muted-foreground">
+            Les règles applicables à l’utilisation de Brayano IA et les responsabilités de chaque
+            partie.
+          </p>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Dernière mise à jour : 5 octobre 2026
+          </p>
         </div>
 
-        <aside className="mt-10 rounded-xl border border-amber-300 bg-amber-50 p-5 text-amber-950 shadow-sm sm:p-6" aria-labelledby="whatsapp-risk-title">
+        <aside
+          className="mt-10 rounded-xl border border-amber-300 bg-amber-50 p-5 text-amber-950 shadow-sm sm:p-6"
+          aria-labelledby="whatsapp-risk-title"
+        >
           <div className="flex gap-4">
-            <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-amber-100"><ShieldAlert className="size-5" /></span>
+            <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-amber-100">
+              <ShieldAlert className="size-5" />
+            </span>
             <div>
-              <h2 id="whatsapp-risk-title" className="text-lg font-semibold">À lire avant de connecter un compte WhatsApp</h2>
-              <p className="mt-2 text-sm leading-6">Brayano IA n’utilise pas l’API officielle WhatsApp Business. Cette intégration comporte un risque réel de restriction ou de blocage du compte et du numéro associés. WhatsApp peut suspendre ou désactiver un compte; Brayano IA ne peut ni empêcher cette décision ni garantir sa réactivation.</p>
+              <h2 id="whatsapp-risk-title" className="text-lg font-semibold">
+                À lire avant de connecter un compte WhatsApp
+              </h2>
+              <p className="mt-2 text-sm leading-6">
+                Brayano IA n’utilise pas l’API officielle WhatsApp Business. Cette intégration
+                comporte un risque réel de restriction ou de blocage du compte et du numéro
+                associés. WhatsApp peut suspendre ou désactiver un compte; Brayano IA ne peut ni
+                empêcher cette décision ni garantir sa réactivation.
+              </p>
               <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
-                <a className="inline-flex items-center gap-1 underline underline-offset-4" href="https://www.whatsapp.com/legal/terms-of-service/?lang=fr" target="_blank" rel="noreferrer">Conditions WhatsApp <ExternalLink className="size-3.5" /></a>
-                <a className="inline-flex items-center gap-1 underline underline-offset-4" href="https://business.whatsapp.com/policy/preview?lang=fr_FR" target="_blank" rel="noreferrer">Politique WhatsApp Business <ExternalLink className="size-3.5" /></a>
+                <a
+                  className="inline-flex items-center gap-1 underline underline-offset-4"
+                  href="https://www.whatsapp.com/legal/terms-of-service/?lang=fr"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Conditions WhatsApp <ExternalLink className="size-3.5" />
+                </a>
+                <a
+                  className="inline-flex items-center gap-1 underline underline-offset-4"
+                  href="https://business.whatsapp.com/policy/preview?lang=fr_FR"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Politique WhatsApp Business <ExternalLink className="size-3.5" />
+                </a>
               </div>
             </div>
           </div>
         </aside>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[15rem_minmax(0,1fr)]">
-          <nav className="h-fit rounded-xl border border-border bg-muted/35 p-5 lg:sticky lg:top-8" aria-label="Sommaire des conditions">
+          <nav
+            className="h-fit rounded-xl border border-border bg-muted/35 p-5 lg:sticky lg:top-8"
+            aria-label="Sommaire des conditions"
+          >
             <p className="text-sm font-semibold">Dans cette page</p>
             <ol className="mt-4 grid gap-3 text-sm text-muted-foreground">
-              {sections.map((section) => <li key={section.id}><a href={`#${section.id}`} className="transition-colors hover:text-foreground">{section.number}. {section.title}</a></li>)}
+              {sections.map((section) => (
+                <li key={section.id}>
+                  <a href={`#${section.id}`} className="transition-colors hover:text-foreground">
+                    {section.number}. {section.title}
+                  </a>
+                </li>
+              ))}
             </ol>
           </nav>
 
           <div className="space-y-5">
             {sections.map((section) => (
-              <section key={section.id} id={section.id} className={`scroll-mt-8 rounded-xl border p-6 sm:p-8 ${section.id === "whatsapp" ? "border-amber-300 bg-amber-50/60" : "border-border bg-card"}`}>
+              <section
+                key={section.id}
+                id={section.id}
+                className={`scroll-mt-8 rounded-xl border p-6 sm:p-8 ${section.id === "whatsapp" ? "border-amber-300 bg-amber-50/60" : "border-border bg-card"}`}
+              >
                 <div className="flex items-start gap-4">
-                  <span className={`grid size-10 shrink-0 place-items-center rounded-lg text-sm font-semibold ${section.id === "whatsapp" ? "bg-amber-100 text-amber-900" : "bg-primary/5 text-primary"}`}>{section.number}</span>
+                  <span
+                    className={`grid size-10 shrink-0 place-items-center rounded-lg text-sm font-semibold ${section.id === "whatsapp" ? "bg-amber-100 text-amber-900" : "bg-primary/5 text-primary"}`}
+                  >
+                    {section.number}
+                  </span>
                   <div>
                     <h2 className="text-xl font-semibold leading-snug">{section.title}</h2>
-                    <div className="mt-4 space-y-4 text-sm leading-7 text-muted-foreground">{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
-                    {section.id === "whatsapp" && <div className="mt-5 flex gap-3 rounded-lg border border-amber-300/70 bg-white/70 p-4 text-sm leading-6 text-amber-950"><AlertTriangle className="mt-0.5 size-4 shrink-0" /><p>Si un blocage aurait un impact important sur votre activité, n’activez pas Brayano IA sur votre numéro principal avant d’avoir évalué ce risque.</p></div>}
+                    <div className="mt-4 space-y-4 text-sm leading-7 text-muted-foreground">
+                      {section.paragraphs.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                    {section.id === "whatsapp" && (
+                      <div className="mt-5 flex gap-3 rounded-lg border border-amber-300/70 bg-white/70 p-4 text-sm leading-6 text-amber-950">
+                        <AlertTriangle className="mt-0.5 size-4 shrink-0" />
+                        <p>
+                          Si un blocage aurait un impact important sur votre activité, n’activez pas
+                          Brayano IA sur votre numéro principal avant d’avoir évalué ce risque.
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </section>
@@ -164,14 +239,22 @@ function ConditionsPage() {
           </div>
         </div>
 
-        <p className="mt-10 border-t border-border pt-6 text-xs leading-5 text-muted-foreground">Ces conditions décrivent le fonctionnement général du service. Les accords signés avec chaque client peuvent préciser le périmètre, les modalités commerciales et le traitement des données.</p>
+        <p className="mt-10 border-t border-border pt-6 text-xs leading-5 text-muted-foreground">
+          Ces conditions décrivent le fonctionnement général du service. Les accords signés avec
+          chaque client peuvent préciser le périmètre, les modalités commerciales et le traitement
+          des données.
+        </p>
       </main>
 
       <footer className="border-t border-border bg-muted/35">
         <div className="mx-auto flex max-w-5xl flex-col gap-3 px-5 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <span>© 2026 Brayano IA</span>
-          <a href="mailto:brayanodev@gmail.com" className="transition-colors hover:text-foreground">brayanodev@gmail.com</a>
-          <a href="/" className="transition-colors hover:text-foreground">Retour à l’accueil</a>
+          <a href="mailto:brayanodev@gmail.com" className="transition-colors hover:text-foreground">
+            brayanodev@gmail.com
+          </a>
+          <a href="/" className="transition-colors hover:text-foreground">
+            Retour à l’accueil
+          </a>
         </div>
       </footer>
     </div>
