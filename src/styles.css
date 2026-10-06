@@ -411,7 +411,7 @@
   }
   .video-placeholder {
     position: relative;
-    min-height: 30rem;
+    min-height: 0;
     overflow: hidden;
     border-radius: 0.75rem;
     background: var(--color-ink);
@@ -424,10 +424,19 @@
     object-fit: cover;
     opacity: 0.72;
   }
+  .video-placeholder > video {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
   .video-placeholder::after {
     content: "";
     position: absolute;
     inset: 0;
+    pointer-events: none;
     background: linear-gradient(
       to top,
       color-mix(in oklch, var(--ink) 90%, transparent),
@@ -501,7 +510,7 @@
   }
   .media-frame,
   .video-placeholder {
-    min-height: 24rem;
+    min-height: 0;
   }
 }
 @keyframes message-in {

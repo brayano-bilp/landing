@@ -43,6 +43,7 @@ const SITE_URL = (import.meta.env["VITE_SITE_URL"] as string | undefined)?.repla
 const PAGE_TITLE = "Brayano IA | Agent commercial IA sur WhatsApp pour entreprises";
 const PAGE_DESCRIPTION =
   "Brayano IA répond à vos prospects sur WhatsApp 24h/24, qualifie leurs besoins et les oriente vers la bonne équipe. Demandez une démonstration de 10 minutes.";
+const DEMO_VIDEO_URL = "/videos/brayano%20(1).mp4";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -809,28 +810,18 @@ function LandingPage() {
                 ))}
               </ol>
               <div className="video-placeholder">
-                <img
-                  src={videoPoster.url}
-                  alt="Réunion de travail pour configurer Brayano IA"
-                  loading="lazy"
-                />
-                <div className="video-overlay">
-                  <Button asChild size="icon" className="size-14 shrink-0 rounded-full">
-                    <a
-                      href={getWhatsAppUrl(messages.demo)}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="Demander une démonstration en direct sur WhatsApp"
-                      onClick={() => trackEvent("whatsapp_click", "demo")}
-                    >
-                      <Play className="fill-current" />
-                    </a>
-                  </Button>
-                  <div>
-                    <p>Une démonstration en direct, sur votre cas</p>
-                    <span>10 minutes • Sur WhatsApp ou en visio</span>
-                  </div>
-                </div>
+                <video
+                  autoPlay
+                  controls
+                  muted
+                  playsInline
+                  preload="metadata"
+                  poster={videoPoster.url}
+                  aria-label="Présentation vidéo de Brayano IA"
+                >
+                  <source src={DEMO_VIDEO_URL} type="video/mp4" />
+                  Votre navigateur ne peut pas lire cette vidéo.
+                </video>
               </div>
             </div>
           </div>
