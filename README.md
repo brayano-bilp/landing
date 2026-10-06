@@ -34,3 +34,14 @@ npm run build    # build de production
 ## Analytics
 
 Chaque clic WhatsApp émet l’événement `brayano:conversion` (`name`, `source`). `bridgeConversionEvents()` le relaie automatiquement vers Google Tag Manager / GA4 (`dataLayer`, `gtag`), Plausible ou Meta Pixel dès que le script correspondant est présent sur la page — il suffit d’ajouter le script de l’outil choisi.
+
+## Déploiement sur Vercel
+
+Le build par défaut (Lovable) cible Cloudflare. `vercel.json` force le preset Vercel (`NITRO_PRESET=vercel`) uniquement pour les builds Vercel.
+
+1. Sur [vercel.com/new](https://vercel.com/new), importez le dépôt GitHub `brayano-bilp/landing`.
+2. Laissez les réglages détectés depuis `vercel.json` (aucune commande à modifier).
+3. Ajoutez la variable d’environnement `VITE_SITE_URL` (ex. `https://votre-domaine.com`) pour activer `canonical` et `og:image`.
+4. Déployez, puis ajoutez votre domaine dans _Settings → Domains_.
+
+Les déploiements suivants sont automatiques à chaque push (production sur la branche principale, aperçus sur les autres branches).
